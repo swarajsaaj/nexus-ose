@@ -7,12 +7,7 @@ ENV NEXUS_HOME /opt/nexus/nexus
 ENV NEXUS_WORK /sonatype-work
 ENV NEXUS_REPOS /repositories
 
-RUN yum -y install tar && cd /var/tmp \
-  && curl --fail --silent --location --retry 3 -O \
-  --header "Cookie: oraclelicense=accept-securebackup-cookie; " \
-  http://download.oracle.com/otn-pub/java/jdk/7u76-b13/jdk-7u76-linux-x64.rpm \
-  && rpm -Ui jdk-7u76-linux-x64.rpm \
-  && rm -rf jdk-7u76-linux-x64.rpm
+RUN yum -y install tar java-1.7.0-openjdk-devel.x86_64
 
 # Install jq
 RUN curl --fail --silent --location --retry 3 \
