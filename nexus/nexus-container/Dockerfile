@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM rhel:7
 
 EXPOSE 8081
 
